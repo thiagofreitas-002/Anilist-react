@@ -1,0 +1,90 @@
+{
+  "animes": [
+    {
+      "name": "Eula",
+      "description": "Eula é uma personagem jogável de Genshin Impact",
+      "image-url": "https://cdn.waifu.im/6466.jpeg",
+      "category": {
+        "id": 1,
+        "name": "Ecchi"
+      },
+      "id": 1
+    },
+    {
+      "name": "Mix anime",
+      "description": "Anime 1",
+      "image-url": "https://pbs.twimg.com/media/Fd12rvWXEBMb2oK?format=jpg",
+      "category": {
+        "id": 2,
+        "name": "Seinen"
+      },
+      "id": 2
+    }
+  ],
+
+  "mangas": [
+    {
+      "name": "Mix mangá",
+      "description": "Mangá 1",
+      "image-url": "https://pbs.twimg.com/media/Fd0I1lVWAAEYx41?format=jpg",
+      "category": {
+        "id": 3,
+        "name": "Harém"
+      },
+      "id": 1
+    },
+    {
+      "name": "Mix mangá2",
+      "description": "Mangá 2",
+      "image-url": "https://pbs.twimg.com/media/FdwZarQXEAMMnGj?format=jpg",
+      "category": {
+        "id": 4,
+        "name": "Romance"
+      },
+      "id": 2
+    }
+  ],
+
+  "categories": [
+    {
+      "id": 1,
+      "name": "Ecchi"
+    },
+    {
+      "id": 2,
+      "name": "Seinen"
+    },
+    {
+      "id": 3,
+      "name": "Harém"
+    },
+    {
+      "id": 4,
+      "name": "Romance"
+    },
+    {
+      "id": 5,
+      "name": "Isekai"
+    },
+    {
+      "id": 6,
+      "name": "Tensei"
+    },
+    {
+      "id": 7,
+      "name": "Comedy"
+    },
+    {
+      "id": 8,
+      "name": "Drama"
+    },
+    {
+      "id": 9,
+      "name": "Horror"
+    },
+    {
+      "id": 10,
+      "name": "Hentai"
+    }
+  ]
+}
