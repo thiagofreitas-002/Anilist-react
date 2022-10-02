@@ -17,7 +17,11 @@ export default function Header() {
           <nav className={styles.header__navbar}>
             <ul className={styles.header__links}>
               <li className={styles.header__link}>
+<<<<<<< HEAD
                 <Link to="/">Home</Link>a
+=======
+                <Link to="/">Home</Link>
+>>>>>>> master
               </li>
 
               <li className={styles.header__link}>
