@@ -11,11 +11,9 @@ const NavHidden = css`
 
 let lastScrollY = window.scrollY;
 window.addEventListener("scroll", () => {
-  if (lastScrollY < window.scrollY) {
-    nav.classList.add(NavHidden);
-  } else {
-    nav.classList.remove(NavHidden);
-  }
+  lastScrollY < window.scrollY
+    ? nav.classList.add(NavHidden)
+    : nav.classList.remove(NavHidden);
 
   lastScrollY = window.scrollY;
 });
