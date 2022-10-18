@@ -1,9 +1,9 @@
 import * as C from "../layout/ContainerStyle";
 
-export function AnimeList() {
-  return (
+export function Browse(){
+  return(
     <C.MainContainer>
-      <div>Anime List :)</div>
+      <div>Browse :)</div>
     </C.MainContainer>
-  );
+  )
 }

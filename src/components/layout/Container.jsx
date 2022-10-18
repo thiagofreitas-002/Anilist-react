@@ -1,10 +1,9 @@
-import styles from "./Container.module.scss"
+import * as M from "./ContainerStyle";
 
-export default function Container() {
+export function Container(props) {
   return (
-    <main>
-      <div className={styles.main__container}>
-      </div>
-    </main>
-  )
+    <M.Main>
+      {props.children}
+    </M.Main>
+  );
 }

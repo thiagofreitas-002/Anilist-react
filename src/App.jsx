@@ -1,27 +1,18 @@
-<<<<<<< HEAD
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.scss'
-=======
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
->>>>>>> master
 
 //! Pages
-import Home from "./components/pages/Home";
-import Profile from "./components/pages/Profile";
-import AnimeList from "./components/pages/AnimeList";
-import MangaList from "./components/pages/MangaList";
-import Waifus from "./components/pages/Waifus";
-import Browse from "./components/pages/Browser";
-import Forum from "./components/pages/Forum";
+import { Home } from "./components/pages/Home";
+import { Profile } from "./components/pages/Profile";
+import { AnimeList } from "./components/pages/AnimeList";
+import { MangaList } from "./components/pages/MangaList";
+import { Waifus } from "./components/pages/Waifus";
+import { Browse } from "./components/pages/Browse";
+import { Forum } from "./components/pages/Forum";
 
 //! Layout
-import Header from "./components/layout/Header";
-import Container from "./components/layout/Container";
-import Footer from "./components/layout/Footer";
-
-//! Styles
-import "./assets/styles/root.scss";
+import { Header } from "./components/layout/Header";
+import { Container } from "./components/layout/Container";
+import { Footer } from "./components/layout/Footer";
 
 export default function App() {
   return (

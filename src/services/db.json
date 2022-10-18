@@ -1,0 +1,18 @@
+{
+  "waifus": [
+    {
+      "id": 1,
+      "url": "https://cdn.waifu.im/399.jpeg"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typeCode"
+  }
+}

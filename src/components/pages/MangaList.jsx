@@ -1,5 +1,9 @@
-export default function MangaList() {
+import * as C from "../layout/ContainerStyle";
+
+export function MangaList() {
   return (
-    <div></div>
-  )
+    <C.MainContainer>
+      <div>Mangá list :)</div>
+    </C.MainContainer>
+  );
 }

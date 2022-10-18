@@ -1,5 +1,9 @@
-export default function Profile() {
+import * as C from "../layout/ContainerStyle";
+
+export function Profile() {
   return (
-    <div></div>
-  )
+    <C.MainContainer>
+      <div>Profile :)</div>
+    </C.MainContainer>
+  );
 }
