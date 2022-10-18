@@ -16,14 +16,15 @@ ReactDOM.createRoot(document.getElementById("wrapper")).render(
           --blue-700: #161f2e;
           --blue-600: #152232;
           --blue-500: #151f2e;
-          
+
           --gray-100: #8596a5;
-          
+
           --light-blue-100: #3db4f2;
-          
+
           --trans-200: 200ms;
-          
+
           --color-text: #9fadbd;
+          --nav-height: 68px;
         }
 
         * {
@@ -35,7 +36,7 @@ ReactDOM.createRoot(document.getElementById("wrapper")).render(
           font-family: "Roboto", "Overpass", sans-serif;
           color: #9fadbd;
         }
-        
+
         #wrapper {
           display: grid;
           grid-template-areas:
@@ -51,12 +52,12 @@ ReactDOM.createRoot(document.getElementById("wrapper")).render(
           scroll-behavior: smooth;
           background: var(--blue-800);
         }
-        
-        .nav__hidden {
-          --nav_height: 68px;
+
+        /*
+          .nav__hidden {
           transform: translateY(calc(-1 * var(--nav_height)));
-        }
-        `}
+        } */
+      `}
     />
     <App />
   </React.StrictMode>

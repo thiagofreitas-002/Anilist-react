@@ -1,24 +1,28 @@
 import { Link } from "react-router-dom";
+import { css } from "@emotion/css";
 
 import logo from "../../assets/img/anilist__logo.svg";
 import * as H from "./HeaderStyle";
 
+const nav = document.querySelector("header");
+const NavHidden = css`
+  transform: translateY(calc(-1 * var(--nav-height)));
+`;
+
+let lastScrollY = window.scrollY;
+window.addEventListener("scroll", () => {
+  if (lastScrollY < window.scrollY) {
+    nav.classList.add(NavHidden);
+  } else {
+    nav.classList.remove(NavHidden);
+  }
+
+  lastScrollY = window.scrollY;
+});
+
 export function Header() {
-  const nav = document.getElementById("navbar");
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener("scroll", () => {
-    if (lastScrollY < window.scrollY) {
-      nav.classList.add("nav__hidden");
-    } else {
-      nav.classList.remove("nav__hidden");
-    }
-
-    lastScrollY = window.scrollY;
-  });
-
   return (
-    <H.Header className="Teste" id="navbar">
+    <H.Header id="navbar">
       <H.HeaderContainer>
         <H.HeaderContent>
           <H.HeaderLogo>

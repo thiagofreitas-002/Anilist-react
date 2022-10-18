@@ -8,7 +8,7 @@ export function Parallax() {
           <P.Header>
             <P.Card>
               <h2>Title Anime</h2>
-              <P.Button>
+              <P.Button href="#">
                 More Details
               </P.Button>
             </P.Card>
