@@ -1,6 +1,6 @@
-import ScrollReveal from "scrollreveal";
+import ScrollReveal from 'scrollreveal'
 
-import * as W from "./ImagesStyle";
+import * as W from './ImagesStyle'
 
 /* const url = "https://api.waifu.im/random/?selected_tags=ecchi";
 const getApiData = async () => {
@@ -17,29 +17,24 @@ const getApiData = async () => {
 };
 getApiData(); */
 
-window.effect = ScrollReveal({ reset: true });
+window.effect = ScrollReveal({ reset: true })
 const mods = {
   duration: 1000,
   delay: 100,
-  distance: "10px",
-  easing: "ease-in-out",
+  distance: '10px',
+  easing: 'ease-in-out',
   interval: 100,
   opacity: 0,
   scale: 0.75,
-  origin: "bottom",
+  origin: 'bottom',
   /* rotate: {
     x: 100,
     y: 100,
     z: 100
   } */
-};
-effect.reveal(".reveal", mods);
+}
+effect.reveal('.reveal', mods)
 
 export function Images() {
-
-  return (
-    <W.Images>
-      
-    </W.Images>
-  );
+  return <W.Images></W.Images>
 }

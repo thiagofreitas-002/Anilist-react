@@ -22,21 +22,13 @@ const Banner = styled.div`
 
 const Content = styled.div`
   padding: 12px;
-<<<<<<< HEAD
-`;
-=======
 `
->>>>>>> beta
 
 const Header = styled.div`
   font-weight: 500;
   font-size: 0.8rem;
   padding-bottom: 8px;
-<<<<<<< HEAD
-`;
-=======
 `
->>>>>>> beta
 
 const Text = styled.div`
   font-size: 0.8rem;
