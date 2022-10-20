@@ -1,11 +1,11 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Main = styled.main`
   grid-area: main;
   min-height: 100vh;
   background: var(--blue-800);
   margin-top: 68px;
-`;
+`
 
 export const MainContainer = styled.div`
   width: 100%;
@@ -35,11 +35,11 @@ export const MainContainer = styled.div`
     padding-left: 25px;
     padding-right: 25px;
   }
-`;
+`
 
 export const ParallaxContainer = styled.div`
   width: 100%;
   height: 500px;
   margin-bottom: 20px;
   overflow: hidden;
-`;
+`

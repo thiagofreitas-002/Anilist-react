@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Previews = styled.div`
   margin-top: 32px;
-`;
+`
 
-export const Preview = styled.div``;
+export const Preview = styled.div``
 
 export const Header = styled.div`
   padding-left: 12px;
@@ -15,7 +15,7 @@ export const Header = styled.div`
     font-size: 0.9rem;
     font-weight: 500;
   }
-`;
+`
 
 export const List = styled.div`
   background-color: var(--blue-700);
@@ -26,4 +26,4 @@ export const List = styled.div`
   border-radius: 4px;
   margin-bottom: 20px;
   gap: 20px;
-`;
+`

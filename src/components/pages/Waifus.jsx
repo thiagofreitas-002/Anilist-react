@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-import { api } from "../../services/api";
-import { WaifuImage } from "./WaifusImage";
-import * as W from "./WaifusStyle";
+import { api } from '../../services/api'
+import { WaifuImage } from './WaifusImage'
+import * as W from './WaifusStyle'
 
 export function Waifus() {
-  const [waifus, setWaifus] = useState([]);
+  const [waifus, setWaifus] = useState([])
 
   useEffect(() => {
-    api.get("/waifus/").then((response) => {
-      console.log(response);
-      setWaifus(response.data);
-    });
-  }, []);
+    api.get('/waifus/').then((response) => {
+      console.log(response)
+      setWaifus(response.data)
+    })
+  }, [])
 
   return (
     <W.Waifus>
@@ -23,8 +23,8 @@ export function Waifus() {
             src={waifu.url}
             title={waifu.tags[0].description}
           />
-        );
+        )
       })}
     </W.Waifus>
-  );
+  )
 }

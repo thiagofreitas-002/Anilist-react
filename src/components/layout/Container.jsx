@@ -1,9 +1,5 @@
-import * as M from "./ContainerStyle";
+import * as M from './ContainerStyle'
 
 export function Container(props) {
-  return (
-    <M.Main>
-      {props.children}
-    </M.Main>
-  );
+  return <M.Main>{props.children}</M.Main>
 }

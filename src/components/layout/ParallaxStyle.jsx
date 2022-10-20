@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Parallax = styled.div`
   background-image: url(https://www.serialminds.com/wp-content/uploads/2022/09/Cyberpunk-Edgerunners-cover.jpg);
@@ -7,9 +7,7 @@ export const Parallax = styled.div`
   background-position: center;
   background-attachment: fixed;
   margin-bottom: 20px;
-
-  
-`;
+`
 
 export const Shadow = styled.div`
   height: 100%;
@@ -18,7 +16,7 @@ export const Shadow = styled.div`
     rgba(12, 22, 34, 1),
     rgba(12, 22, 34, 0)
   );
-`;
+`
 
 export const ParallaxContainer = styled.div`
   display: grid;
@@ -40,7 +38,7 @@ export const ParallaxContainer = styled.div`
   @media (min-width: 1024px) and (max-width: 1540px) {
     max-width: 1140px;
   }
-`;
+`
 
 export const Header = styled.div`
   display: flex;
@@ -55,7 +53,7 @@ export const Header = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
+`
 
 export const Card = styled.div`
   text-align: center;
@@ -63,7 +61,7 @@ export const Card = styled.div`
   h2 {
     color: var(--light-blue-100);
   }
-`;
+`
 
 export const Button = styled.a`
   background: var(--blue-700);
@@ -79,14 +77,14 @@ export const Button = styled.a`
     color: var(--light-blue-100);
     transform: translateY(-2px);
   }
-`;
+`
 
 export const ParallaxPoster = styled.div`
   z-index: 100;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-`;
+`
 
 export const Poster = styled.div`
   height: calc(115px * 4);
@@ -106,7 +104,7 @@ export const Poster = styled.div`
       transform: scale(1.2);
     }
   }
-`;
+`
 
 export const Summary = styled.div`
   text-align: justify;
@@ -124,4 +122,4 @@ export const Summary = styled.div`
       color: rgba(159, 173, 189, 1);
     }
   }
-`;
+`

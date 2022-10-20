@@ -1,24 +1,33 @@
-import { Link } from "react-router-dom";
-import { css } from "@emotion/css";
+import { Link } from 'react-router-dom'
+import { css } from '@emotion/css'
+import { useEffect } from 'react'
 
-import logo from "../../assets/img/anilist__logo.svg";
-import * as H from "./HeaderStyle";
-
-const nav = document.querySelector("header");
-const NavHidden = css`
-  transform: translateY(calc(-1 * var(--nav-height)));
-`;
-
-let lastScrollY = window.scrollY;
-window.addEventListener("scroll", () => {
-  lastScrollY < window.scrollY
-    ? nav.classList.add(NavHidden)
-    : nav.classList.remove(NavHidden);
-
-  lastScrollY = window.scrollY;
-});
+import logo from '../../assets/img/anilist__logo.svg'
+import * as H from './HeaderStyle'
 
 export function Header() {
+  function handleScrollEffect() {
+    const nav = document.querySelector('#navbar')
+    const NavHidden = css`
+      transform: translateY(calc(-1 * var(--nav-height)));
+    `
+
+    let lastScrollY = window.scrollY
+    window.addEventListener('scroll', () => {
+      if (lastScrollY < window.scrollY) {
+        nav.classList.add(NavHidden)
+      } else {
+        nav.classList.remove(NavHidden)
+      }
+
+      lastScrollY = window.scrollY
+    })
+  }
+
+  useEffect(() => {
+    handleScrollEffect()
+  }, [])
+
   return (
     <H.Header id="navbar">
       <H.HeaderContainer>
@@ -73,5 +82,5 @@ export function Header() {
         </H.HeaderContent>
       </H.HeaderContainer>
     </H.Header>
-  );
+  )
 }

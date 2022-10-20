@@ -1,7 +1,7 @@
-import * as C from "../layout/ContainerStyle";
+import * as C from '../layout/ContainerStyle'
 
-export function Browse(){
-  return(
+export function Browse() {
+  return (
     <C.MainContainer>
       <div>Browse :)</div>
     </C.MainContainer>
