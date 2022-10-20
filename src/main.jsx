@@ -52,11 +52,6 @@ ReactDOM.createRoot(document.getElementById("wrapper")).render(
           scroll-behavior: smooth;
           background: var(--blue-800);
         }
-
-        /*
-          .nav__hidden {
-          transform: translateY(calc(-1 * var(--nav_height)));
-        } */
       `}
     />
     <App />

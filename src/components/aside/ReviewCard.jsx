@@ -14,7 +14,7 @@ const Banner = styled.div`
 
   img {
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center top;
     width: 100%;
     height: 100%;
   }
@@ -22,13 +22,13 @@ const Banner = styled.div`
 
 const Content = styled.div`
   padding: 12px;
-  `;
+`;
 
 const Header = styled.div`
   font-weight: 500;
   font-size: 0.8rem;
   padding-bottom: 8px;
-  `;
+`;
 
 const Text = styled.div`
   font-size: 0.8rem;
@@ -51,7 +51,10 @@ export function ReviewCard() {
   return (
     <Review href="#">
       <Banner>
-        <img src="https://cdn.waifu.im/7913.jpg" alt="banner img" />
+        <img
+          src="https://wallpaperaccess.com/full/4116948.jpg"
+          alt="banner img"
+        />
       </Banner>
 
       <Content>
@@ -63,7 +66,7 @@ export function ReviewCard() {
           facilis nemo similique debitis autem quia nihil nostrum id magni
           commodi optio.
           <Like>
-            <ThumbsUp size={12} weight="fill"/>1
+            <ThumbsUp size={12} weight="fill" />1
           </Like>
         </Text>
       </Content>
