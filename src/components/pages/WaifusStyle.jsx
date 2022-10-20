@@ -1,23 +1,9 @@
 import styled from "@emotion/styled";
 
 export const Waifus = styled.div`
+  min-height: 100vh;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-`;
-
-export const Column = styled.div`
+  grid-template-columns: repeat(auto-fit, minmax(192px, 1fr));
   align-items: flex-start;
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-export const Image = styled.div`
-  overflow: hidden;
-
-  img {
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-    transform: scale(1.1);
-  }
+  grid-template-rows: repeat(auto-fill, minmax(225px, 325px));
 `;

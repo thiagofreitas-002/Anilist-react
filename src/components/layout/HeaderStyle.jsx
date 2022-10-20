@@ -55,7 +55,11 @@ export const HeaderNavbar = styled.nav`
 
   ul {
     height: 100%;
-
+    display: flex;
+    align-items: center;
+    text-align: center;
+    line-height: 1.09;
+    
     li {
       display: inline-flex;
 
