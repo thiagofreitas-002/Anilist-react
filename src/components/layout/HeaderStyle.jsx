@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Header = styled.header`
   background: var(--blue-600);
@@ -12,7 +12,7 @@ export const Header = styled.header`
   z-index: 999;
   width: 100%;
   transition: transform ease-out 300ms;
-`;
+`
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -22,14 +22,14 @@ export const HeaderContainer = styled.div`
   max-width: 1050px;
   margin-left: 50px;
   margin-right: 50px;
-`;
+`
 
 export const HeaderContent = styled.div`
   display: flex;
   height: 100%;
   width: 100%;
   align-items: center;
-`;
+`
 
 export const HeaderLogo = styled.div`
   width: 65px;
@@ -42,14 +42,14 @@ export const HeaderLogo = styled.div`
     width: 50px;
     height: 50px;
   }
-`;
+`
 
 export const HeaderNavbar = styled.nav`
   width: 100%;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  font-family: "overpass", sans-serif;
+  font-family: 'overpass', sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
 
@@ -59,7 +59,7 @@ export const HeaderNavbar = styled.nav`
     align-items: center;
     text-align: center;
     line-height: 1.09;
-    
+
     li {
       display: inline-flex;
 
@@ -76,14 +76,14 @@ export const HeaderNavbar = styled.nav`
       }
     }
   }
-`;
+`
 
 export const HeaderProfile = styled.div`
   display: inline-flex;
   align-items: center;
   height: 55px;
   width: 65px;
-`;
+`
 
 export const User = styled.div`
   width: 38px;
@@ -95,4 +95,4 @@ export const User = styled.div`
     border-radius: 4px;
     object-fit: contain;
   }
-`;
+`

@@ -1,12 +1,12 @@
-import styled from "@emotion/styled";
-import { ThumbsUp } from "phosphor-react";
+import styled from '@emotion/styled'
+import { ThumbsUp } from 'phosphor-react'
 
 const Review = styled.a`
   background: var(--blue-500);
   display: grid;
   grid-template-rows: 80px 1fr;
   border-radius: 4px;
-`;
+`
 
 const Banner = styled.div`
   border-radius: 4px 4px 0px 0px;
@@ -18,17 +18,25 @@ const Banner = styled.div`
     width: 100%;
     height: 100%;
   }
-`;
+`
 
 const Content = styled.div`
   padding: 12px;
+<<<<<<< HEAD
 `;
+=======
+`
+>>>>>>> beta
 
 const Header = styled.div`
   font-weight: 500;
   font-size: 0.8rem;
   padding-bottom: 8px;
+<<<<<<< HEAD
 `;
+=======
+`
+>>>>>>> beta
 
 const Text = styled.div`
   font-size: 0.8rem;
@@ -36,7 +44,7 @@ const Text = styled.div`
   text-align: justify;
   position: relative;
   color: var(--gray-100);
-`;
+`
 
 const Like = styled.div`
   display: block;
@@ -45,7 +53,7 @@ const Like = styled.div`
   right: 0px;
   display: inline-flex;
   align-items: center;
-`;
+`
 
 export function ReviewCard() {
   return (
@@ -71,5 +79,5 @@ export function ReviewCard() {
         </Text>
       </Content>
     </Review>
-  );
+  )
 }

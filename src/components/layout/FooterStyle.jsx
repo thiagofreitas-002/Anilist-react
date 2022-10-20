@@ -1,18 +1,18 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Footer = styled.footer`
   background: var(--blue-900);
   height: 100px;
   grid-area: footer;
   color: #a0b1c5;
-  font-family: "overpass", sans-serif;
+  font-family: 'overpass', sans-serif;
   font-weight: 600;
   text-align: left;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-`;
+`
 
 export const FooterContainer = styled.div`
   display: flex;
@@ -42,9 +42,9 @@ export const FooterContainer = styled.div`
     padding-left: 25px;
     padding-right: 25px;
   }
-`;
+`
 
 export const FooterContent = styled.div`
   width: 100%;
   height: 100%;
-`;
+`

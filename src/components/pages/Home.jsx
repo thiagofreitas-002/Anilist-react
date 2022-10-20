@@ -1,13 +1,13 @@
 //! Components
-import { Parallax } from "../layout/Parallax";
-import { Card } from "../previews/Card";
-import { ThreadCard } from "../aside/ThreadCard";
-import { ReviewCard } from "../aside/ReviewCard";
+import { Parallax } from '../layout/Parallax'
+import { Card } from '../previews/Card'
+import { ThreadCard } from '../aside/ThreadCard'
+import { ReviewCard } from '../aside/ReviewCard'
 
 //! Styles
-import * as C from "../layout/ContainerStyle";
-import * as P from "../previews/MainPreviewsStyles";
-import * as M from "./Content";
+import * as C from '../layout/ContainerStyle'
+import * as P from '../previews/MainPreviewsStyles'
+import * as M from './Content'
 
 export function Home() {
   return (
@@ -145,5 +145,5 @@ export function Home() {
         </M.Content>
       </C.MainContainer>
     </>
-  );
+  )
 }

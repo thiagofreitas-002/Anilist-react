@@ -1,7 +1,3 @@
-export const colors = {
-  
-}
+export const colors = {}
 
-export const borderRadius = {
-
-}
+export const borderRadius = {}

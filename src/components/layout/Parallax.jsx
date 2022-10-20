@@ -1,4 +1,4 @@
-import * as P from "./ParallaxStyle"
+import * as P from './ParallaxStyle'
 
 export function Parallax() {
   return (
@@ -8,9 +8,7 @@ export function Parallax() {
           <P.Header>
             <P.Card>
               <h2>Title Anime</h2>
-              <P.Button href="#">
-                More Details
-              </P.Button>
+              <P.Button href="#">More Details</P.Button>
             </P.Card>
 
             <iframe
@@ -18,7 +16,7 @@ export function Parallax() {
               height="315"
               src="https://www.youtube.com/embed/q74fX9CnqtQ"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
             />
@@ -44,5 +42,5 @@ export function Parallax() {
         </P.ParallaxContainer>
       </P.Shadow>
     </P.Parallax>
-  );
+  )
 }

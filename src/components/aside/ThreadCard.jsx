@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
-import { Link } from "react-router-dom";
-import { css } from "@emotion/css";
+import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
+import { css } from '@emotion/css'
 
 const Thread = styled.div`
   border-radius: 4px;
@@ -23,17 +23,17 @@ const Thread = styled.div`
       color: var(--light-blue-100);
     }
   }
-`;
+`
 
 const Profile = styled.div`
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const Left = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 const Avatar = styled.a`
   width: 28px;
@@ -47,7 +47,7 @@ const Avatar = styled.a`
     width: 100%;
     height: 100%;
   }
-`;
+`
 
 const Name = styled.div`
   padding-left: 8px;
@@ -62,12 +62,12 @@ const Name = styled.div`
       color: var(--light-blue-100);
     }
   }
-`;
+`
 
 const Right = styled.div`
   display: flex;
   align-items: center;
-`;
+`
 
 const Tag = styled.a`
   border-radius: 12px;
@@ -81,7 +81,7 @@ const Tag = styled.a`
   &:hover {
     color: #000;
   }
-`;
+`
 
 export function ThreadCard() {
   return (
@@ -113,5 +113,5 @@ export function ThreadCard() {
         </Right>
       </Profile>
     </Thread>
-  );
+  )
 }
