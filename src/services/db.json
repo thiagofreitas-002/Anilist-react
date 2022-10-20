@@ -1,28 +1,11 @@
 {
-  "waifus": [
+  "Images": [
     {
-      "image_id": 1,
-      "title": "a",
-      "description": "",
-      "source": "",
-      "signature": "",
-      "favorites": "",
-      "dominant_color": "",
-      "width": "",
-      "height": "",
-      "is_nsfw": true,
-      "url": "https://cdn.waifu.im/399.jpeg",
-      "preview_url": "",
-      "extension": "",
-      "tags": [
-        {
-          "tag_id": 1,
-          "category": "",
-          "description": "",
-          "is_nsfw": true
-        }
-      ]
-    },
+      "id": 1,
+      "url": ""
+    }
+  ],
+  "comments": [
     {
       "image_id": 2,
       "title": "a",
