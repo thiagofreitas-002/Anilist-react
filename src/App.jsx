@@ -5,7 +5,7 @@ import { Home } from "./components/pages/Home";
 import { Profile } from "./components/pages/Profile";
 import { AnimeList } from "./components/pages/AnimeList";
 import { MangaList } from "./components/pages/MangaList";
-import { Waifus } from "./components/pages/Waifus";
+import { Images } from "./components/pages/Images";
 import { Browse } from "./components/pages/Browse";
 import { Forum } from "./components/pages/Forum";
 
@@ -23,7 +23,7 @@ export function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/anime-list" element={<AnimeList />} />
           <Route path="/manga-list" element={<MangaList />} />
-          <Route path="/waifus" element={<Waifus />} />
+          <Route path="/images" element={<Images />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/browse" element={<Browse />} />
           <Route path="/forum" element={<Forum />} />

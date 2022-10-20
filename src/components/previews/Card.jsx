@@ -1,10 +1,11 @@
 import ScrollReveal from "scrollreveal";
 
 import styled from "@emotion/styled";
+import { useEffect } from "react";
 
 const CardContent = styled.div`
   a {
-    background-image: url("https://cdn.waifu.im/6466.jpeg");
+    background-color: white;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50%;
@@ -33,28 +34,34 @@ const Text = styled.div`
 const Overlay = styled.div``;
 
 export function Card() {
-  window.effect = ScrollReveal({ reset: true });
-  const mods = {
-    duration: 500,
-    delay: 50,
-    distance: "10px",
-    easing: "ease-in-out",
-    interval: 50,
-    opacity: 0,
-    scale: 0.75,
-    origin: "bottom",
-    rotate: {
-      x: 100,
-      /*  
+  function revealCards() {
+    window.effect = ScrollReveal({ reset: true });
+    const mods = {
+      duration: 500,
+      delay: 50,
+      distance: "10px",
+      easing: "ease-in-out",
+      interval: 50,
+      opacity: 0,
+      scale: 0.75,
+      origin: "bottom",
+      rotate: {
+        x: 100,
+        /*  
       y: 100,
       z: 100, 
       */
-    },
-  };
-  effect.reveal(".css-e7ju1j", mods);
+      },
+    };
+    effect.reveal(".test", mods);
+  }
+
+  useEffect(() => {
+    revealCards()
+  })
 
   return (
-    <CardContent>
+    <CardContent className="test">
       <a href="#">
         <Text></Text>
         <Overlay></Overlay>
