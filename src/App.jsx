@@ -1,21 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ThemeProvider } from '@emotion/react'
+import { BrowserRouter } from 'react-router-dom'
+import { Router } from './router'
 
-//! Pages
-import { Home } from './components/pages/Home'
-import { Profile } from './components/pages/Profile'
-import { AnimeList } from './components/pages/AnimeList'
-import { MangaList } from './components/pages/MangaList'
-import { Waifus } from './components/pages/Waifus'
-import { Browse } from './components/pages/Browse'
-import { Forum } from './components/pages/Forum'
-
-//! Layout
-import { Header } from './components/layout/Header'
-import { Container } from './components/layout/Container'
-import { Footer } from './components/layout/Footer'
+import { Theme } from './styles/themes/default'
 
 export function App() {
   return (
+<<<<<<< HEAD
     <Router>
       <Header />
       <Container>
@@ -31,5 +22,12 @@ export function App() {
       </Container>
       <Footer />
     </Router>
+=======
+    <ThemeProvider theme={Theme}>
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
+    </ThemeProvider>
+>>>>>>> beta
   )
 }
