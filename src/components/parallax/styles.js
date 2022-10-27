@@ -7,15 +7,13 @@ export const ParallaxContainer = styled.div`
   overflow: hidden;
 `
 
-export const Parallax = styled.div`
-  background-image: url(https://www.serialminds.com/wp-content/uploads/2022/09/Cyberpunk-Edgerunners-cover.jpg);
+export const Parallax = styled.section`
+  background-image: url('https://www.serialminds.com/wp-content/uploads/2022/09/Cyberpunk-Edgerunners-cover.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   margin-bottom: 20px;
-  position: absolute;
-  left: 0;
   width: 100%;
   top: 685px;
 `

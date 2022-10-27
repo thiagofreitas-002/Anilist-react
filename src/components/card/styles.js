@@ -55,12 +55,12 @@ export const ContainerCard = styled.div`
     /* visibility: hidden; */
 
     img {
-      object-fit: contain;
+      object-fit: cover;
       object-position: center;
       height: 100%;
       max-height: 115px;
       width: 100%;
-      transform: scale(1.5);
+      /* transform: scale(1.3); */
     }
 
     &:hover ${Text} {

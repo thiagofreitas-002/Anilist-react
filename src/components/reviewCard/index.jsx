@@ -15,10 +15,12 @@ export function ReviewCard() {
         <header>Review of title</header>
 
         <A.Text>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
-          quaerat sunt quasi fugit, accusantium, sed voluptas in distinctio,
-          facilis nemo similique debitis autem quia nihil nostrum id magni
-          commodi optio.
+          <p id="char-limit">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
+            quaerat sunt quasi fugit, accusantium, sed voluptas in distinctio,
+            facilis nemo similique debitis autem quia nihil nostrum id magni
+            commodi optio.
+          </p>
           <A.Like>
             <ThumbsUp size={12} weight="fill" />1
           </A.Like>

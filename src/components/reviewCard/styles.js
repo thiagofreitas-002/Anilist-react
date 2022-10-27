@@ -23,7 +23,7 @@ export const ReviewContainer = styled.a`
   grid-template-rows: 80px 1fr;
   border-radius: 4px;
 
-  &:hover ${Overlay}{
+  &:hover ${Overlay} {
     opacity: 1;
   }
 `

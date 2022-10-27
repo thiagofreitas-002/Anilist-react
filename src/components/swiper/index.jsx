@@ -1,10 +1,11 @@
-import { Autoplay, EffectCreative } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { useState, useEffect } from "react";
-
 import { css } from "@emotion/css";
-import { apiTest } from "../../services/api";
-import { Image } from "./image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectCreative } from "swiper";
+import "swiper/css/effect-creative";
+import "swiper/css";
+
+import { api, apiTest } from "../../services/api";
 
 const swiperStyle = css`
   height: 300px;
@@ -22,6 +23,14 @@ const swiperStyle = css`
 
     .swiper-slide {
       height: inherit;
+
+      img {
+        object-fit: contain;
+        object-position: center;
+        /* transform: scale(1); */
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 `;
@@ -31,9 +40,7 @@ export function SwiperContent() {
 
   useEffect(() => {
     apiTest
-      .get(
-        "/random?many=true&is_nsfw=false&gif=false&selected_tags=waifu&orientation=LANDSCAPE"
-      )
+      .get("/random?many=true&nsfw=true&included-tags=ass")
       .then((response) => {
         console.log(response);
         setWaifus(response.data.images);
@@ -45,27 +52,26 @@ export function SwiperContent() {
       grabCursor={true}
       effect={"creative"}
       /* autoHeight={true} */
-      autoplay={{
-        delay: 2500,
-        disableOnInteraction: false,
-      }}
       creativeEffect={{
         prev: {
           shadow: true,
-          translate: ["-105%", 0, -500],
+          translate: ["-121%", 0, -500],
         },
         next: {
-          shadow: true,
-          translate: ["105%", 0, -500],
+          translate: ["121%", 0, -500],
         },
       }}
-      modules={[Autoplay, EffectCreative]}
+      autoplay={{
+        delay: 5000,
+        disableOnInteraction: false,
+      }}
+      modules={[EffectCreative, Autoplay]}
       className={swiperStyle}
     >
       {waifus?.map((waifu) => {
         return (
           <SwiperSlide key={waifu.image_id}>
-            <Image
+            <img
               key={waifu.image_id}
               src={waifu.url}
               title={waifu.tags[0].name}
