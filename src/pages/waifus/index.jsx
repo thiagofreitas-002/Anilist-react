@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { css } from "@emotion/css";
 
 import { apiTest, apiTest3 } from "../../services/api";
-import { WaifuImage } from "../../components/waifusImage";
+import { WaifuImage } from "./components/waifusImage";
 import { Loading } from "../../components/loading";
 
 import * as A from "./styles";
@@ -19,7 +19,7 @@ export function Waifus() {
 
       apiTest
         .get(
-          `/random?many=true&included_tags=ecchi&gif=false&orientation=PORTRAIT`
+          `/random?many=true&selected_tags=ecchi&is_nsfw=false&orientation=PORTRAIT`
         )
         .then((response) => {
           console.log(response);

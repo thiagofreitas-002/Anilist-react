@@ -5,7 +5,7 @@ import { Autoplay, EffectCreative } from "swiper";
 import "swiper/css/effect-creative";
 import "swiper/css";
 
-import { api, apiTest } from "../../services/api";
+import { api, apiTest } from "../../../../services/api";
 
 const swiperStyle = css`
   height: 300px;
@@ -40,9 +40,9 @@ export function SwiperContent() {
 
   useEffect(() => {
     apiTest
-      .get("/random?many=true&nsfw=true&included-tags=ass")
+      .get("/random?many=true&nsfw=true&included-tags=ecchi")
       .then((response) => {
-        console.log(response);
+        /* console.log(response); */
         setWaifus(response.data.images);
       });
   }, []);

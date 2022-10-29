@@ -1,6 +1,6 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
-export const ImageContainer = styled.div`
+export const Content = styled.div`
   overflow: hidden;
   height: 100%;
 
@@ -11,4 +11,4 @@ export const ImageContainer = styled.div`
     height: 100%;
     width: 100%;
   }
-`
+`;

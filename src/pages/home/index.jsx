@@ -1,15 +1,13 @@
 //! Components
-import { Card } from "../../components/card";
+import { Card } from "./components/card";
 import { ReviewCard } from "../../components/reviewCard";
 import { ThreadCard } from "../../components/threadCard";
-import { Parallax } from "../../components/parallax";
+import { Parallax } from "./components/parallax";
 
 //! Styles
 import * as P from "./styles";
-// eslint-disable-next-line no-unused-vars
-import { MobileButton } from "../../components/mobileButton";
 import { Container } from "../../layout/defaultLayout/styles";
-import { SwiperContent } from "../../components/swiper";
+import { SwiperContent } from "./components/swiper";
 
 export function Home() {
   return (

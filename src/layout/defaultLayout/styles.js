@@ -1,10 +1,10 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const LayoutContainer = styled.main`
   grid-area: main;
   min-height: 100vh;
   background: var(--blue-800);
-`
+`;
 
 export const Container = styled.div`
   width: 100%;
@@ -29,9 +29,14 @@ export const Container = styled.div`
     margin: 0 auto;
   }
 
+  @media (min-width: 760px) and (max-width: 1040px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
   @media (max-width: 450px) {
     max-width: 300px;
     padding-left: 25px;
     padding-right: 25px;
   }
-`
+`;

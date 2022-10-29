@@ -1,39 +1,16 @@
 import ScrollReveal from "scrollreveal";
 import { useEffect, useState } from "react";
-
-import { api, apiTest, apiTest3 } from "../../services/api";
-
-import * as A from "./styles";
 import { css } from "@emotion/css";
+
+import { api, apiTest, apiTest3 } from "../../../../services/api";
+import { CardImage } from "../cardImage";
+
+import * as C from "./styles";
 
 //! CORRIGIR MÚLTIPLAS RENDERIZAÇÕES E O REVEAL
 
 export function Card() {
-  console.log("Renderizou os cards");
-
-  function reveal() {
-    window.effect = ScrollReveal({ reset: false });
-    const mods = {
-      duration: 500,
-      delay: 50,
-      distance: "100px",
-      easing: "ease-in-out",
-      interval: 150,
-      opacity: 0,
-      scale: 0.75,
-      origin: "bottom",
-      rotate: {
-        x: 100,
-        y: 0,
-        z: 0,
-      },
-    };
-    effect.reveal(".reveal", mods);
-  }
-
-  useEffect(() => {
-    reveal();
-  }, []);
+  /* console.log("Renderizou os cards"); */
 
   const [waifus, setWaifus] = useState([]);
 
@@ -45,12 +22,12 @@ export function Card() {
     apiTest3
       .get(
         `/post.json?limit=${randomNumber(
-          20
-        )}&tags=genshin_impact&page=${randomNumber(250)}`
+          10
+        )}&tags=genshin_impact&page=${randomNumber(50)}`
       )
       .then((response) => {
         setWaifus(response.data);
-        console.log(response);
+        /* console.log(response); */
       });
   }, []);
 
@@ -58,7 +35,7 @@ export function Card() {
     <>
       {waifus.map((waifu, index) => {
         return (
-          <A.ContainerCard key={index} className="reveal">
+          <C.ContainerCard key={index}>
             <a
               href={waifu.file_url}
               target="_blank"
@@ -70,15 +47,16 @@ export function Card() {
                 background-repeat: no-repeat;
               `}
             >
-              <A.Text>
+              {/* <CardImage src={waifu.preview_url} /> */}
+              <C.Text>
                 <span>Ep 12</span>
                 <span>00d 00h 25m</span>
-              </A.Text>
-              <A.Overlay>
+              </C.Text>
+              <C.Overlay>
                 <span>4 +</span>
-              </A.Overlay>
+              </C.Overlay>
             </a>
-          </A.ContainerCard>
+          </C.ContainerCard>
         );
       })}
     </>
