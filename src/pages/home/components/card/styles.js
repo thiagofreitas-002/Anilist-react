@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const Text = styled.div`
   position: absolute;
-  background-color: rgba(31, 38, 49, 0.7);
+  background: ${(props) => props.theme.colors.overlay["color-overlay"]};
   width: 100%;
   height: 41%;
   bottom: 0;
@@ -26,6 +26,7 @@ export const Text = styled.div`
 
 export const Overlay = styled.div`
   opacity: 0;
+  visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,7 +35,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 25%;
   text-align: center;
-  background: rgba(31, 38, 49, 0.7);
+  background: ${(props) => props.theme.colors.overlay["color-overlay"]};
   transition: ${(props) => props.theme.transitions["trans-200"]};
 
   span {
@@ -44,32 +45,24 @@ export const Overlay = styled.div`
   }
 `;
 
-export const ContainerCard = styled.div`
-  a {
-    display: inline-block;
-    width: 100%;
-    height: 115px;
-    overflow: hidden;
-    border-radius: 4px;
-    position: relative;
-    /* visibility: hidden; */
+export const ContainerCard = styled.a`
+  display: inline-block;
+  width: 100%;
+  height: 115px;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
-    img {
-      object-fit: cover;
-      object-position: center;
-      height: 100%;
-      max-height: 115px;
-      width: 100%;
-      /* transform: scale(1.3); */
-    }
+  &:hover ${Text} {
+    opacity: 0;
+    visibility: hidden;
+  }
 
-    &:hover ${Text} {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    &:hover ${Overlay} {
-      opacity: 1;
-    }
+  &:hover ${Overlay} {
+    opacity: 1;
+    visibility: visible;
   }
 `;

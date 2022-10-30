@@ -5,7 +5,7 @@ import { Autoplay, EffectCreative } from "swiper";
 import "swiper/css/effect-creative";
 import "swiper/css";
 
-import { api, apiTest } from "../../../../services/api";
+import { danbooru } from "../../../../services/api";
 
 const swiperStyle = css`
   height: 300px;
@@ -23,14 +23,6 @@ const swiperStyle = css`
 
     .swiper-slide {
       height: inherit;
-
-      img {
-        object-fit: contain;
-        object-position: center;
-        /* transform: scale(1); */
-        height: 100%;
-        width: 100%;
-      }
     }
   }
 `;
@@ -38,12 +30,23 @@ const swiperStyle = css`
 export function SwiperContent() {
   const [waifus, setWaifus] = useState([]);
 
+  const randomNumber = (max) => {
+    return Math.floor(Math.random() * max);
+  };
+
+  const login = "login=Ot4kuAki";
+  const key = "api_key=yupv1JtHPF8aoRL6BTPKNJf2";
+
   useEffect(() => {
-    apiTest
-      .get("/random?many=true&nsfw=true&included-tags=ecchi")
+    danbooru
+      .get(
+        `/posts.json?${login}&${key}&limit=100&tags=is:sfw&page=${randomNumber(
+          25
+        )}`
+      )
       .then((response) => {
-        /* console.log(response); */
-        setWaifus(response.data.images);
+        console.log(response.data);
+        setWaifus(response.data);
       });
   }, []);
 
@@ -70,13 +73,15 @@ export function SwiperContent() {
     >
       {waifus?.map((waifu) => {
         return (
-          <SwiperSlide key={waifu.image_id}>
-            <img
-              key={waifu.image_id}
-              src={waifu.url}
-              title={waifu.tags[0].name}
-            />
-          </SwiperSlide>
+          <SwiperSlide
+            key={waifu.id}
+            className={css`
+              background-image: url(${waifu.large_file_url});
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+            `}
+          ></SwiperSlide>
         );
       })}
     </Swiper>

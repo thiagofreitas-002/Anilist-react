@@ -3,9 +3,10 @@ import { Card } from "./components/card";
 import { ReviewCard } from "../../components/reviewCard";
 import { ThreadCard } from "../../components/threadCard";
 import { Parallax } from "./components/parallax";
+import { ActivityFeed } from "./components/activityFeed";
 
 //! Styles
-import * as P from "./styles";
+import * as C from "./styles";
 import { Container } from "../../layout/defaultLayout/styles";
 import { SwiperContent } from "./components/swiper";
 
@@ -13,108 +14,128 @@ export function Home() {
   return (
     <>
       <Container>
-        <P.PreviewsContainer>
-          <P.Preview>
-            <P.Header>
+        <C.PreviewsContainer>
+          <C.Preview>
+            <C.Header>
               <h2>Airing</h2>
-            </P.Header>
+            </C.Header>
 
-            <P.List>
+            <C.List>
               <Card />
-            </P.List>
-          </P.Preview>
+            </C.List>
+          </C.Preview>
 
-          <P.Preview>
-            <P.Header>
+          <C.Preview>
+            <C.Header>
               <h2>Anime in progress</h2>
-            </P.Header>
+            </C.Header>
 
-            <P.List>
+            <C.List>
               <Card />
-            </P.List>
-          </P.Preview>
+            </C.List>
+          </C.Preview>
 
-          <P.Preview>
-            <P.Header>
+          <C.Preview>
+            <C.Header>
               <h2>Manga in progress</h2>
-            </P.Header>
+            </C.Header>
 
-            <P.List>
+            <C.List>
               <Card />
-            </P.List>
-          </P.Preview>
-        </P.PreviewsContainer>
+            </C.List>
+          </C.Preview>
+        </C.PreviewsContainer>
       </Container>
 
       <Parallax />
 
       <Container>
-        <P.ContentContainer>
-          <P.Left>
-            <P.Header>
+        <C.Content>
+          <C.Left>
+            <C.Header>
               <h2>Activity</h2>
-            </P.Header>
-          </P.Left>
 
-          <P.Right>
+              <C.Buttons>
+                <button>Following</button>
+                <button>Global</button>
+              </C.Buttons>
+            </C.Header>
+
+            <C.Textarea>
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="10"
+                placeholder="Write a status..."
+              />
+            </C.Textarea>
+
+            <C.ContentLeft>
+              <ActivityFeed />
+              <C.LoadMore>Load More</C.LoadMore>
+            </C.ContentLeft>
+          </C.Left>
+
+          <C.Right>
             <SwiperContent />
 
-            <P.Forum>
-              <P.Header>
+            <C.Forum>
+              <C.Header>
                 <a href="#">Forum Activity</a>
-              </P.Header>
+              </C.Header>
 
-              <P.ThreadCards>
+              <C.ThreadCards>
                 <ThreadCard />
                 <ThreadCard />
                 <ThreadCard />
-              </P.ThreadCards>
-            </P.Forum>
+              </C.ThreadCards>
+            </C.Forum>
 
-            <P.Review>
-              <P.Header>
+            <C.Review>
+              <C.Header>
                 <a href="#">Recent Reviews</a>
-              </P.Header>
+              </C.Header>
 
-              <P.ReviewsCards>
+              <C.ReviewsCards>
                 <ReviewCard />
                 <ReviewCard />
                 <ReviewCard />
                 <ReviewCard />
-              </P.ReviewsCards>
-            </P.Review>
+              </C.ReviewsCards>
+            </C.Review>
 
-            <P.Trending>
-              <P.Header>
+            <C.Trending>
+              <C.Header>
                 <a href="#">Trending Anime & Manga</a>
-              </P.Header>
+              </C.Header>
 
-              <P.Content>
+              <C.ContentRight>
                 <Card />
-              </P.Content>
-            </P.Trending>
+              </C.ContentRight>
+            </C.Trending>
 
-            <P.AddedAnime>
-              <P.Header>
+            <C.AddedAnime>
+              <C.Header>
                 <a href="#">Newly Added Anime</a>
-              </P.Header>
+              </C.Header>
 
-              <P.Content>
+              <C.ContentRight>
                 <Card />
-              </P.Content>
-            </P.AddedAnime>
+              </C.ContentRight>
+            </C.AddedAnime>
 
-            <P.AddedManga>
-              <P.Header>
+            <C.AddedManga>
+              <C.Header>
                 <a href="#">Newly Added Manga</a>
-              </P.Header>
+              </C.Header>
 
-              <P.Content>
+              <C.ContentRight>
                 <Card />
-              </P.Content>
-            </P.AddedManga>
-          </P.Right>
-        </P.ContentContainer>
+              </C.ContentRight>
+            </C.AddedManga>
+          </C.Right>
+        </C.Content>
       </Container>
     </>
   );

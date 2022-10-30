@@ -1,8 +1,8 @@
-import { ThemeProvider } from '@emotion/react'
-import { BrowserRouter } from 'react-router-dom'
-import { Router } from './router'
+import { ThemeProvider } from "@emotion/react";
+import { BrowserRouter } from "react-router-dom";
 
-import { Theme } from './styles/themes/default'
+import { Router } from "./router";
+import { Theme } from "./styles/themes/default";
 
 export function App() {
   return (
@@ -11,5 +11,5 @@ export function App() {
         <Router />
       </BrowserRouter>
     </ThemeProvider>
-  )
+  );
 }

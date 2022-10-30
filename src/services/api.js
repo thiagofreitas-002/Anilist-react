@@ -9,7 +9,7 @@ export const apiTest = axios.create({
 });
 
 export const apiTest2 = axios.create({
-  baseURL: "https://api.waifu.pics",
+  baseURL: "https://api.waifu.pics/",
 });
 
 export const apiTest3 = axios.create({
@@ -17,5 +17,10 @@ export const apiTest3 = axios.create({
 });
 
 export const apiJsonPlaceholder = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: "https://jsonplaceholder.typicode.com/",
+  method: "GET",
+});
+
+export const danbooru = axios.create({
+  baseURL: "https://danbooru.donmai.us/",
 });

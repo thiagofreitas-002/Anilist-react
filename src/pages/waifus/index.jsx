@@ -1,62 +1,66 @@
 import { useEffect, useState } from "react";
 import { css } from "@emotion/css";
 
-import { apiTest, apiTest3 } from "../../services/api";
+import { danbooru } from "../../services/api";
 import { WaifuImage } from "./components/waifusImage";
 import { Loading } from "../../components/loading";
 
-import * as A from "./styles";
+import * as C from "./styles";
 
 export function Waifus() {
   const [waifus, setWaifus] = useState([]);
-  const [removeLoading, setRemoveLoading] = useState(false);
+  /* const [removeLoading, setRemoveLoading] = useState(false); */
 
   useEffect(() => {
-    setTimeout(() => {
-      const randomPageNumber = (max) => {
-        return Math.floor(Math.random() * max);
-      };
+    setTimeout(
+      () => {
+        const randomNumber = (max) => {
+          return Math.floor(Math.random() * max);
+        };
 
-      apiTest
-        .get(
-          `/random?many=true&selected_tags=ecchi&is_nsfw=false&orientation=PORTRAIT`
-        )
-        .then((response) => {
-          console.log(response);
-          setWaifus(response.data.images);
-          setRemoveLoading(true);
-        });
-    }, 3000);
+        const login = "login=Ot4kuAki";
+        const key = "api_key=yupv1JtHPF8aoRL6BTPKNJf2";
+
+        danbooru
+          .get(
+            `/posts.json?${login}&${key}&limit=100&tags=is:sfw&page=${randomNumber(
+              25
+            )}`
+          ) /* &random:50 */
+          .then((response) => {
+            console.log(response.data);
+            setWaifus(response.data);
+            /* setRemoveLoading(true); */
+          });
+      } /* 1000 */
+    );
   }, []);
-
-  /* /post.json?limit=100&page=${randomPageNumber(1000)} apiTest3 */
-  /* /random?many=true&is_nsfw=false&gif=false&selected_tags=waifu&orientation=PORTRAIT apiTest */
 
   console.log("Renderizou as imagens");
 
   return (
-    <A.WaifusContainer>
+    <C.Container>
       {waifus.length >= 10 &&
         waifus?.map((waifu) => {
           return (
-            <a
+            <div
               className={css`
                 height: 100%;
+                position: relative;
               `}
-              href={waifu.source}
-              key={waifu.image_id}
+              key={waifu.id}
               target="_blank"
               rel="noreferrer"
             >
               <WaifuImage
-                key={waifu.image_id}
-                src={waifu.url}
-                title={waifu.tags[0].name}
+                src={waifu.large_file_url}
+                alt={waifu.tag_string_general}
+                waifu={waifu}
               />
-            </a>
+            </div>
           );
         })}
-      {!removeLoading && <Loading />}
-    </A.WaifusContainer>
+      {/* {!removeLoading && <Loading />} */}
+    </C.Container>
   );
 }

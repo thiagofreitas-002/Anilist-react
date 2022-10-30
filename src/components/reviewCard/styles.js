@@ -8,6 +8,7 @@ export const Overlay = styled.div`
   align-items: center;
   justify-content: center;
   opacity: 0;
+  visibility: hidden;
   font-weight: 500;
   font-size: 0.9rem;
   transition: ${(props) => props.theme.transitions["trans-200"]};
@@ -26,6 +27,7 @@ export const ReviewContainer = styled.a`
 
   &:hover ${Overlay} {
     opacity: 1;
+    visibility: visible;
   }
 `;
 
