@@ -22,6 +22,11 @@ export const Overlay = styled.div`
     gap: 4px;
     font-weight: 600;
     transition: ${(props) => props.theme.transitions["trans-200"]};
+    background-color: ${(props) =>
+      props.theme.colors.foreground["color-foreground"]};
+    padding: 4px 12px;
+    border-radius: 32px;
+    margin-bottom: auto;
 
     &:hover {
       color: ${(props) => props.theme.colors.blue["color-blue-600"]};
@@ -148,9 +153,16 @@ export const Content = styled.div`
   }
 `;
 
-export const WidthHeight = styled.div`
+export const OverlayContent = styled.div`
   display: flex;
   flex-direction: column;
+  line-height: 1.1;
+  background-color: ${(props) =>
+    props.theme.colors.foreground["color-foreground"]};
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 12px;
+  width: 100%;
 
   p {
     font-weight: 500;

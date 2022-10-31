@@ -45,42 +45,60 @@ export function WaifuImage({ waifu }) {
       )}
     >
       <C.Numbers>
-        <C.Likes>
+        <C.Likes title="Likes">
           <Heart size={"16px"} weight="fill" color="red" />
           {waifu.fav_count}
         </C.Likes>
 
-        <C.Score>
+        <C.Score title="Score">
           <Star size={"16px"} weight="fill" color="yellow" />
           {waifu.score}
         </C.Score>
       </C.Numbers>
+
       <C.FullImage href={waifu.large_file_url} target="_blank">
         <ImageSquare size={"16px"} weight={"regular"} />
         <C.Popup>Full size</C.Popup>
       </C.FullImage>
+
       <C.Overlay>
         <a href={waifu.source} target="_blank" rel="noreferrer">
           <LinkSimple size={"16px"} weight={"bold"} />
           Source
         </a>
-        <C.WidthHeight>
-          <p>
-            Width: <span>{`${waifu.image_width}px`}</span>
-          </p>
-          <p>
-            Height: <span>{`${waifu.image_height}px`}</span>
-          </p>
+
+        <C.OverlayContent>
+          <div
+            className={css`
+              display: flex;
+              gap: 8px;
+            `}
+          >
+            <p>
+              Width: <span>{`${waifu.image_width}px`}</span>
+            </p>
+            <p>
+              Height: <span>{`${waifu.image_height}px`}</span>
+            </p>
+          </div>
+
           <p>
             Author: <span>{`@${waifu.tag_string_artist}`}</span>
           </p>
-          <p>
-            Character: <span>{waifu.tag_string_character}</span>
+          <p
+            className={css`
+              max-width: 41ch;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+            `}
+          >
+            Character:
+            <span title={waifu.tag_string_character}>
+              {waifu.tag_string_character}
+            </span>
           </p>
-          {/* <p>
-            Tags: <span>{waifu.tag_string_general}</span>
-          </p> */}
-        </C.WidthHeight>
+        </C.OverlayContent>
       </C.Overlay>
     </C.Content>
   );

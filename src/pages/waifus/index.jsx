@@ -23,7 +23,7 @@ export function Waifus() {
 
         danbooru
           .get(
-            `/posts.json?${login}&${key}&limit=100&tags=is:sfw&page=${randomNumber(
+            `/posts.json?${login}&${key}&random:50&limit=100&tags=is:sfw&page=${randomNumber(
               25
             )}`
           ) /* &random:50 */
