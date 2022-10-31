@@ -1,47 +1,66 @@
 import { useEffect, useState } from "react";
 import { css } from "@emotion/css";
 
-import { apiTest } from "../../services/api";
-import { WaifuImage } from "../../components/waifusImage";
+import { danbooru } from "../../services/api";
+import { WaifuImage } from "./components/waifusImage";
+import { Loading } from "../../components/loading";
 
-import * as A from "./styles";
+import * as C from "./styles";
 
 export function Waifus() {
   const [waifus, setWaifus] = useState([]);
+  /* const [removeLoading, setRemoveLoading] = useState(false); */
 
   useEffect(() => {
-    const array = ["ass", "hentai", "milf", "oral", "paizuri", "ecchi", "ero"];
-    apiTest
-      .get(
-        `/random?many=true&is_nsfw=false&excluded_tags${array}&selected_tags=raiden-shogun&orientation=PORTRAIT`
-      )
-      .then((response) => {
-        console.log(response);
-        setWaifus(response.data.images);
-      });
+    setTimeout(
+      () => {
+        const randomNumber = (max) => {
+          return Math.floor(Math.random() * max);
+        };
+
+        const login = "login=Ot4kuAki";
+        const key = "api_key=yupv1JtHPF8aoRL6BTPKNJf2";
+
+        danbooru
+          .get(
+            `/posts.json?${login}&${key}&random:50&limit=100&tags=is:sfw&page=${randomNumber(
+              25
+            )}`
+          ) /* &random:50 */
+          .then((response) => {
+            console.log(response.data);
+            setWaifus(response.data);
+            /* setRemoveLoading(true); */
+          });
+      } /* 1000 */
+    );
   }, []);
 
+  console.log("Renderizou as imagens");
+
   return (
-    <A.WaifusContainer>
-      {waifus?.map((waifu) => {
-        return (
-          <a
-            className={css`
-              height: 100%;
-            `}
-            href={waifu.source}
-            key={waifu.image_id}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <WaifuImage
-              key={waifu.image_id}
-              src={waifu.url}
-              title={waifu.tags[0].name}
-            />
-          </a>
-        );
-      })}
-    </A.WaifusContainer>
+    <C.Container>
+      {waifus.length >= 10 &&
+        waifus?.map((waifu) => {
+          return (
+            <div
+              className={css`
+                height: 100%;
+                position: relative;
+              `}
+              key={waifu.id}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <WaifuImage
+                src={waifu.large_file_url}
+                alt={waifu.tag_string_general}
+                waifu={waifu}
+              />
+            </div>
+          );
+        })}
+      {/* {!removeLoading && <Loading />} */}
+    </C.Container>
   );
 }

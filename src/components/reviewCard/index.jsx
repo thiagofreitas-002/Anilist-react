@@ -1,8 +1,25 @@
-import { ThumbsUp } from 'phosphor-react'
+import { ThumbsUp } from "phosphor-react";
+import { useEffect, useState } from "react";
+import { apiJsonPlaceholder } from "../../services/api";
 
-import * as A from './styles'
+import * as A from "./styles";
 
 export function ReviewCard() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const randomNumber = (max) => {
+      return Math.floor(Math.random() * max);
+    };
+
+    apiJsonPlaceholder
+      .get(`/comments?postId=${randomNumber(3)}`)
+      .then((response) => {
+        setPosts(response.data);
+        console.log(response.data);
+      });
+  }, []);
+
   return (
     <A.ReviewContainer href="#">
       <A.Banner>
@@ -15,15 +32,15 @@ export function ReviewCard() {
         <header>Review of title</header>
 
         <A.Text>
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
-          quaerat sunt quasi fugit, accusantium, sed voluptas in distinctio,
-          facilis nemo similique debitis autem quia nihil nostrum id magni
-          commodi optio.
-          <A.Like>
-            <ThumbsUp size={12} weight="fill" />1
-          </A.Like>
+          {posts?.map((post) => {
+            return <p key={post.id}>{post.name}</p>;
+          })}
         </A.Text>
       </A.Content>
+
+      <A.Like>
+        <ThumbsUp size={12} color="red" weight="fill" />1
+      </A.Like>
     </A.ReviewContainer>
-  )
+  );
 }

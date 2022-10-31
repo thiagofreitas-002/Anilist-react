@@ -1,32 +1,33 @@
-import { Link } from 'react-router-dom'
-import { css } from '@emotion/css'
-import { useEffect } from 'react'
+import { Link } from "react-router-dom";
+import { css } from "@emotion/css";
+import { useEffect } from "react";
 
-import logo from '../../assets/img/anilist__logo.svg'
-import * as A from './styles'
+import logo from "../../assets/img/anilist__logo.svg";
+import * as A from "./styles";
 
 export function Header() {
   function handleScrollEffect() {
-    const nav = document.querySelector('#navbar')
+    const nav = document.querySelector("#navbar");
     const NavHidden = css`
       transform: translateY(calc(-1 * var(--nav-height)));
-    `
+      /* opacity: 0.8; */
+    `;
 
-    let lastScrollY = window.scrollY
-    window.addEventListener('scroll', () => {
+    let lastScrollY = window.scrollY;
+    window.addEventListener("scroll", () => {
       if (lastScrollY < window.scrollY) {
-        nav.classList.add(NavHidden)
+        nav.classList.add(NavHidden);
       } else {
-        nav.classList.remove(NavHidden)
+        nav.classList.remove(NavHidden);
       }
 
-      lastScrollY = window.scrollY
-    })
+      lastScrollY = window.scrollY;
+    });
   }
 
   useEffect(() => {
-    handleScrollEffect()
-  }, [])
+    handleScrollEffect();
+  }, []);
 
   return (
     <A.Header id="navbar">
@@ -82,5 +83,5 @@ export function Header() {
         </A.HeaderContent>
       </A.HeaderContainer>
     </A.Header>
-  )
+  );
 }
