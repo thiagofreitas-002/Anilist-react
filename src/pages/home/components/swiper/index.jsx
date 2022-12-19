@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
-import { css } from "@emotion/css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCreative } from "swiper";
-import "swiper/css/effect-creative";
-import "swiper/css";
+import { useState, useEffect } from 'react'
+import { css } from '@emotion/css'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectCreative } from 'swiper'
+import 'swiper/css/effect-creative'
+import 'swiper/css'
 
-import { danbooru } from "../../../../services/api";
+import { danbooru } from '../../../../services/api'
 
 const swiperStyle = css`
   height: 300px;
@@ -25,43 +25,37 @@ const swiperStyle = css`
       height: inherit;
     }
   }
-`;
+`
 
 export function SwiperContent() {
-  const [waifus, setWaifus] = useState([]);
+  const [waifus, setWaifus] = useState([])
 
   const randomNumber = (max) => {
-    return Math.floor(Math.random() * max);
-  };
+    return Math.floor(Math.random() * max)
+  }
 
-  const login = "login=Ot4kuAki";
-  const key = "api_key=yupv1JtHPF8aoRL6BTPKNJf2";
+  const login = 'login=Ot4kuAki'
+  const key = 'api_key=yupv1JtHPF8aoRL6BTPKNJf2'
 
   useEffect(() => {
-    danbooru
-      .get(
-        `/posts.json?${login}&${key}&limit=100&tags=is:sfw&page=${randomNumber(
-          25
-        )}`
-      )
-      .then((response) => {
-        console.log(response.data);
-        setWaifus(response.data);
-      });
-  }, []);
+    danbooru.get(`/posts.json?${login}&${key}&limit=100&tags=is:sfw&page=${randomNumber(25)}`).then((response) => {
+      console.log(response.data)
+      setWaifus(response.data)
+    })
+  }, [])
 
   return (
     <Swiper
       grabCursor={true}
-      effect={"creative"}
+      effect={'creative'}
       /* autoHeight={true} */
       creativeEffect={{
         prev: {
           shadow: true,
-          translate: ["-121%", 0, -500],
+          translate: ['-121%', 0, -500],
         },
         next: {
-          translate: ["121%", 0, -500],
+          translate: ['121%', 0, -500],
         },
       }}
       autoplay={{
@@ -82,8 +76,8 @@ export function SwiperContent() {
               background-repeat: no-repeat;
             `}
           ></SwiperSlide>
-        );
+        )
       })}
     </Swiper>
-  );
+  )
 }

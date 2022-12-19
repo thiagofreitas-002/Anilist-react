@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const Text = styled.div`
   position: absolute;
-  background: ${(props) => props.theme.colors.overlay["color-overlay"]};
+  background: ${(props) => props.theme.colors.overlay['color-overlay']};
   width: 100%;
   height: 41%;
   bottom: 0;
@@ -15,14 +15,14 @@ export const Text = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: ${(props) => props.theme.transitions["trans-200"]};
+  transition: ${(props) => props.theme.transitions['trans-200']};
 
   span {
     font-weight: 300;
     font-size: 0.7rem;
-    color: ${(props) => props.theme.colors.text["color-text-bright"]};
+    color: ${(props) => props.theme.colors.text['color-text-bright']};
   }
-`;
+`
 
 export const Overlay = styled.div`
   opacity: 0;
@@ -35,17 +35,17 @@ export const Overlay = styled.div`
   width: 100%;
   height: 25%;
   text-align: center;
-  background: ${(props) => props.theme.colors.overlay["color-overlay"]};
-  transition: ${(props) => props.theme.transitions["trans-200"]};
+  background: ${(props) => props.theme.colors.overlay['color-overlay']};
+  transition: ${(props) => props.theme.transitions['trans-200']};
 
   span {
     font-weight: 500;
     font-size: 0.8rem;
-    color: ${(props) => props.theme.colors.text["color-text-bright"]};
+    color: ${(props) => props.theme.colors.text['color-text-bright']};
   }
-`;
+`
 
-export const ContainerCard = styled.a`
+export const Container = styled.a`
   display: inline-block;
   width: 100%;
   height: 115px;
@@ -55,6 +55,7 @@ export const ContainerCard = styled.a`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-image: url(${(props) => props.href});
 
   &:hover ${Text} {
     opacity: 0;
@@ -65,4 +66,4 @@ export const ContainerCard = styled.a`
     opacity: 1;
     visibility: visible;
   }
-`;
+`

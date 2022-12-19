@@ -1,14 +1,14 @@
 //! Components
-import { Card } from "./components/card";
-import { ReviewCard } from "../../components/reviewCard";
-import { ThreadCard } from "../../components/threadCard";
-import { Parallax } from "./components/parallax";
-import { ActivityFeed } from "./components/activityFeed";
+import { Card } from './components/card'
+import { ReviewCard } from '../../components/reviewCard'
+import { ThreadCard } from '../../components/threadCard'
+import { Parallax } from './components/parallax'
+import { ActivityFeed } from './components/activityFeed'
 
 //! Styles
-import * as C from "./styles";
-import { Container } from "../../layout/defaultLayout/styles";
-import { SwiperContent } from "./components/swiper";
+import * as C from './styles'
+import { Container } from '../../layout/defaultLayout/styles'
+import { SwiperContent } from './components/swiper'
 
 export function Home() {
   return (
@@ -62,13 +62,7 @@ export function Home() {
             </C.Header>
 
             <C.Textarea>
-              <textarea
-                name=""
-                id=""
-                cols="30"
-                rows="10"
-                placeholder="Write a status..."
-              />
+              <textarea name="" id="" cols="30" rows="10" placeholder="Write a status..." />
             </C.Textarea>
 
             <C.ContentLeft>
@@ -138,5 +132,5 @@ export function Home() {
         </C.Content>
       </Container>
     </>
-  );
+  )
 }
